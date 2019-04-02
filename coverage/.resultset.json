@@ -1,0 +1,25 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/app.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/spec/features/testing_infrastructure_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1554217483
+  }
+}

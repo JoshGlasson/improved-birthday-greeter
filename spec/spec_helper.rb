@@ -17,7 +17,6 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -36,7 +35,7 @@ require 'capybara/rspec'
 require 'rspec'
 
 # tell Capybara about our app class
-Capybara.app = Battle
+Capybara.app = BirthdayGreeter
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
