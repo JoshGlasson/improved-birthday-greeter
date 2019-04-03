@@ -12,6 +12,7 @@ class BirthdayGreeter < Sinatra::Base
     session[:name] = params[:name]
     session[:day] = Day.new(params[:day])
     session[:month] = params[:month]
+    session[:bday] = Birthday.new(params[:day], params[:month])
     redirect '/birthday_greeting'
   end
 
@@ -19,6 +20,7 @@ class BirthdayGreeter < Sinatra::Base
     @name = session[:name]
     @day = session[:day]
     @month = session[:month]
+    @bday = session[:bday]
     erb :greeter
   end
 end
