@@ -28,4 +28,14 @@ feature 'Shows countdown' do
     expect(page).to have_content 'Happy Birthday Josh!'
   end
 
+  scenario 'birthday has passed' do
+    visit('/')
+    fill_in :name, with: "Josh"
+    fill_in :day, with: (Date.today.day - 1).to_s
+    page.select Date::MONTHNAMES[Date.today.month], from: 'month'
+    click_button "Submit"
+    expect(page).to have_content 'Your Birthday is in 365 days'
+  end
+
+
 end
