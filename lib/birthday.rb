@@ -21,13 +21,14 @@ attr_reader :day, :month
       {"month" => "November", "month_num" => "11"},
       {"month" => "December", "month_num" => "12"}
     ]
+    @date = Date.today
   end
 
 
 
   def until
     bday = Date.new(year, month_number(@month), @day.to_i)
-    return (bday - Date.today).to_i
+    return (bday - @date).to_i
   end
 
   def month_number(month)
@@ -39,7 +40,7 @@ attr_reader :day, :month
   end
 
   def year
-    if Date.today > Date.new(Date.today.year, month_number(@month), @day)
+    if @date > Date.new(@year.year, month_number(@month), @day)
       @year += 365
     else
       @year

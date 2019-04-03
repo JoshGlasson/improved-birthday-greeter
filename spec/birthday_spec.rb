@@ -14,8 +14,11 @@ describe Birthday do
   end
 
   describe '#calcs days until' do
+    let(:bday) { double :birtday }
     it 'can calculate days until birthday' do
-      bday = Birthday.new("8", "June")
+      allow(bday).to receive(:bday).and_return(Date.new(2019, 6, 8))
+      allow(bday).to receive(:date).and_return(Date.new(2019, 4, 3))
+      allow(bday).to receive(:until).and_return(bday.bday - bday.date)
       expect(bday.until).to eq 66
     end
   end

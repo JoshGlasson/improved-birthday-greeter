@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/day'
+require './lib/birthday'
 
 class BirthdayGreeter < Sinatra::Base
   enable :sessions
@@ -20,7 +21,8 @@ class BirthdayGreeter < Sinatra::Base
     @name = session[:name]
     @day = session[:day]
     @month = session[:month]
-    @bday = session[:bday]
+    @bday = session[:bday].until
+    p session[:bday].until
     erb :greeter
   end
 end
