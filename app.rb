@@ -22,7 +22,6 @@ class BirthdayGreeter < Sinatra::Base
     @day = session[:day]
     @month = session[:month]
     @bday = session[:bday].until
-    p session[:bday].until
     erb :greeter
   end
 end

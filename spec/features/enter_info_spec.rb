@@ -10,7 +10,7 @@ feature 'Entering Information' do
 end
 
 feature 'Shows countdown' do
-  scenario '#birthday isnt today' do
+  scenario 'birthday isnt today' do
     visit('/')
     fill_in :name, with: "Josh"
     fill_in :day, with: (Date.today.day + 1).to_s
@@ -18,4 +18,14 @@ feature 'Shows countdown' do
     click_button "Submit"
     expect(page).to have_content 'Your Birthday is in 1 days'
   end
+
+  scenario 'birthday is today' do
+    visit('/')
+    fill_in :name, with: "Josh"
+    fill_in :day, with: (Date.today.day).to_s
+    page.select Date::MONTHNAMES[Date.today.month], from: 'month'
+    click_button "Submit"
+    expect(page).to have_content 'Happy Birthday Josh!'
+  end
+
 end
