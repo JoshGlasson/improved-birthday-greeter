@@ -5,6 +5,6 @@ feature 'Entering Information' do
     fill_in :day, with: 8
     page.select 'June', from: 'month'
     click_button "Submit"
-    expect(page).to have_content 'Hi Josh! Your Birthday is 8 June'
+    expect(page).to have_content 'Hi Josh! Your Birthday is the 8th of June'
   end
 end

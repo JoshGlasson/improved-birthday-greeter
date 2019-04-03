@@ -8,7 +8,7 @@ class BirthdayGreeter < Sinatra::Base
 
   post '/data_entry' do
     session[:name] = params[:name]
-    session[:day] = params[:day]
+    session[:day] = Day.new(params[:day]).pretty
     session[:month] = params[:month]
     redirect '/birthday_greeting'
   end
