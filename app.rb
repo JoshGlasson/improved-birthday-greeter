@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/day'
 
 class BirthdayGreeter < Sinatra::Base
   enable :sessions
@@ -8,7 +9,7 @@ class BirthdayGreeter < Sinatra::Base
 
   post '/data_entry' do
     session[:name] = params[:name]
-    session[:day] = Day.new(params[:day]).pretty
+    session[:day] = Day.new(params[:day])
     session[:month] = params[:month]
     redirect '/birthday_greeting'
   end
