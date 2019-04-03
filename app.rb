@@ -3,6 +3,7 @@ require './lib/day'
 
 class BirthdayGreeter < Sinatra::Base
   enable :sessions
+
   get '/' do
     erb :index
   end

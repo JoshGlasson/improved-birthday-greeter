@@ -3,9 +3,11 @@
     "coverage": {
       "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/app.rb": [
         1,
+        1,
         null,
         1,
         1,
+        null,
         1,
         2,
         null,
@@ -22,18 +24,6 @@
         1,
         1,
         1,
-        null,
-        null
-      ],
-      "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/spec/day_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null
       ],
@@ -86,6 +76,46 @@
         null,
         null
       ],
+      "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/spec/birthday_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/lib/birthday.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/spec/day_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/joshglasson/projects/practicals/Week3/birthday_greeter/spec/features/enter_info_spec.rb": [
         1,
         1,
@@ -107,6 +137,6 @@
         null
       ]
     },
-    "timestamp": 1554280271
+    "timestamp": 1554280811
   }
 }
