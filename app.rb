@@ -12,13 +12,13 @@ class BirthdayGreeter < Sinatra::Base
     session[:name] = params[:name]
     session[:bday] = Birthday.new(params[:date])
     if params[:date] > Date.today.to_s
-      redirect '/what'
+      redirect '/error'
     else
       redirect '/birthday_greeting'
     end
   end
 
-  get '/what' do
+  get '/error' do
     erb :error
   end
 
