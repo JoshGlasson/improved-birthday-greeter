@@ -1,5 +1,4 @@
 require 'sinatra/base'
-require './lib/day'
 require './lib/birthday'
 
 class BirthdayGreeter < Sinatra::Base
@@ -11,17 +10,17 @@ class BirthdayGreeter < Sinatra::Base
 
   post '/data_entry' do
     session[:name] = params[:name]
-    session[:day] = Day.new(params[:day])
-    session[:month] = params[:month]
-    session[:bday] = Birthday.new(params[:day], params[:month])
+    session[:bday] = Birthday.new(params[:date])
     redirect '/birthday_greeting'
   end
 
   get '/birthday_greeting' do
     @name = session[:name]
-    @day = session[:day]
-    @month = session[:month]
-    @bday = session[:bday].until
+    @bday = session[:bday]
+    @age = session[:bday].age
+    @countdown = session[:bday].until
+    @day = session[:bday].pretty_day
+    @month = session[:bday].pretty_month
     erb :greeter
   end
 end

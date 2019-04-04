@@ -3,14 +3,20 @@ require 'birthday'
 describe Birthday do
   describe '#it stores the birthday' do
     it 'stores the day' do
-      bday = Birthday.new("8", "June")
-      expect(bday.day).to eq 8
+      bday = Birthday.new("1995-06-08")
+      expect(bday.day).to eq "08"
     end
 
     it 'stores the month' do
-      bday = Birthday.new("8", "June")
-      expect(bday.month).to eq "June"
+      bday = Birthday.new("1995-06-08")
+      expect(bday.month).to eq "06"
     end
+
+    it 'stores the year' do
+      bday = Birthday.new("1995-06-08")
+      expect(bday.year).to eq "1995"
+    end
+
   end
 
   describe '#calcs days until' do
