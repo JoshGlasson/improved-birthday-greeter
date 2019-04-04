@@ -19,7 +19,7 @@ class BirthdayGreeter < Sinatra::Base
   end
 
   get '/what' do
-    erb :what
+    erb :error
   end
 
   get '/birthday_greeting' do
