@@ -6,6 +6,20 @@ feature 'Entering Information' do
     click_button "Submit"
     expect(page).to have_content 'Hi Josh! Your Birthday is the 8th of June'
   end
+  scenario 'Shows error if you put in todays date' do
+    visit('/')
+    fill_in :name, with: "Josh"
+    fill_in :date, with: Date.today
+    click_button "Submit"
+    expect(page).to have_content 'How are you using the internet if you were born today Josh?'
+  end
+  scenario 'Shows error if you put in future date' do
+    visit('/')
+    fill_in :name, with: "Josh"
+    fill_in :date, with: Date.today + 1
+    click_button "Submit"
+    expect(page).to have_content "You haven't been born yet?"
+  end
 end
 
 feature 'Shows countdown' do
