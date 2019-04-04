@@ -11,7 +11,11 @@ class BirthdayGreeter < Sinatra::Base
   post '/data_entry' do
     session[:name] = params[:name]
     session[:bday] = Birthday.new(params[:date])
-    redirect '/birthday_greeting'
+    if params[:date] > Date.today.to_s
+      redirect '/what'
+    else
+      redirect '/birthday_greeting'
+    end
   end
 
   get '/birthday_greeting' do
