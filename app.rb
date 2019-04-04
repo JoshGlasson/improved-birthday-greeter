@@ -18,6 +18,10 @@ class BirthdayGreeter < Sinatra::Base
     end
   end
 
+  get '/what' do
+    erb :what
+  end
+
   get '/birthday_greeting' do
     @name = session[:name]
     @bday = session[:bday]
