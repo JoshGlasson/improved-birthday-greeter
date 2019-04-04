@@ -20,7 +20,7 @@ feature 'Shows countdown' do
   scenario 'birthday is today' do
     visit('/')
     fill_in :name, with: "Josh"
-    fill_in :date, with: (Date.today)
+    fill_in :date, with: Date.new(1995, Date.today.month, Date.today.day).to_s
     click_button "Submit"
     expect(page).to have_content 'Happy Birthday Josh!'
   end
