@@ -20,8 +20,13 @@
 <body style="background: powderblue; font-size:30px"><center>
 
 <% if @countdown == 0 %>
-<h1 style="font-size:100px; color:blue"><span class="blinking">Happy Birthday <%= @name %>! You are <%= @age %> today!</span></h1>
-<iframe src="https://giphy.com/embed/xT8qB6yf3ZmoDscN7a" width="480" height="263" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <% if @age == 0 %>
+  <h1 style="font-size:100px; color:blue">How are you using the internet if you were born today <%= @name %>?</h1>
+  <iframe src="https://giphy.com/embed/xT8qB6yf3ZmoDscN7a" width="480" height="263" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <% else %>
+  <h1 style="font-size:100px; color:blue"><span class="blinking">Happy Birthday <%= @name %>! You are <%= @age %> today!</span></h1>
+  <iframe src="https://giphy.com/embed/xT8qB6yf3ZmoDscN7a" width="480" height="263" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  <% end %>
 <% else %>
 <h1>Hi <%= @name %>! Your Birthday is the <%= @day %> of <%= @month %> </h1>
 <h2 style="font-size:100px">Your Birthday is in <%= @countdown %> days </h2>
