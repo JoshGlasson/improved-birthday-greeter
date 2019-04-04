@@ -18,12 +18,14 @@
 
 <html>
 <body style="background: powderblue; font-size:30px"><center>
-<h1>Hi <%= @name %>! Your Birthday is the <%= @day.pretty %> of <%= @month %> </h1>
 
 <% if @bday == 0 %>
-<h2 style="font-size:150px; color:blue"><span class="blinking">Happy Birthday <%= @name %>!</span></h2>
+<h1>Hi <%= @name %>! Your Birthday is today! </h1>
+<p style="font-size:150px; color:blue"><span class="blinking">Happy Birthday <%= @name %>!</span></p>
+<iframe src="https://giphy.com/embed/xT8qB6yf3ZmoDscN7a" width="480" height="263" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 <% else %>
-<h3 style="font-size:100px">Your Birthday is in <%= @bday %> days </h3>
+<h1>Hi <%= @name %>! Your Birthday is the <%= @day.pretty %> of <%= @month %> </h1>
+<h2 style="font-size:100px">Your Birthday is in <%= @bday %> days </h2>
 <% end %>
 </center></body>
 </html>
